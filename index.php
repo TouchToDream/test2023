@@ -1,5 +1,11 @@
 <?php
-$services = ['Ремонт телефонов', 'Ремонт компьютеров', 'Ремонт ноутбуков', 'Ремонт телевизоров', 'Ремонт планшетов', 'Продажа комплектующих'];
+$goods = [];
+$goods[0] = ['price' => 100, 'date' => date('Y-m-d'), 'pic' => 'pics/service.jpg', 'service' => 'Ремонт телефонов'];
+$goods[1] = ['price' => 75, 'date' => date('Y-m-d'), 'pic' => 'pics/service.jpg', 'service' => 'Ремонт компьютеров'];
+$goods[2] = ['price' => 25, 'date' => date('Y-m-d'), 'pic' => 'pics/service.jpg', 'service' => 'Ремонт ноутбуков'];
+$goods[3] = ['price' => 35, 'date' => date('Y-m-d'), 'pic' => 'pics/service.jpg', 'service' => 'Ремонт телевизоров'];
+$goods[4] = ['price' => 65, 'date' => date('Y-m-d'), 'pic' => 'pics/service.jpg', 'service' => 'Ремонт планшетов'];
+$goods[5] = ['price' => 99, 'date' => date('Y-m-d'), 'pic' => 'pics/service.jpg', 'service' => 'Продажа комплектующих'];
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +51,7 @@ $services = ['Ремонт телефонов', 'Ремонт компьютер
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Project name</a>
+				<a class="navbar-brand" href="#">APS Service</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav"></ul>
@@ -56,152 +62,30 @@ $services = ['Ремонт телефонов', 'Ремонт компьютер
 	<div class="container">
 		<h1 class="text-center">Услуги</h1>
 
+<?php foreach($goods as $item): ?>		
 		<div class="col-sm-3">
-			<!-- Таблица, которую вы видете ниже, это элемент 1-го товара. Вам нужно такю сделать для каждого товара -->
 			<table class="table table-bordered">
 				<tr>
 					<td class="text-center" colspan="2">
-						<!-- IMAGE 200x200 -->
-						<img src="" class="img-thumbnail center">
+						<img src="<?php echo $item['pic']; ?>" class="img-thumbnail center">
 					</td>
 				</tr>
 				<tr>
 					<td class="text-center" colspan="2">
-						<?php echo $services[0] ?>
+						<?php echo $item['service']; ?>
 					</td>
 				</tr>
 				<tr>
 					<td class="text-center">
-						<!-- GOODS PRICE -->$
+						<?php echo $item['price']; ?>
 					</td>
 					<td class="text-center">
-						<!-- GOODS CREATED AT YYYY-MM-DD -->
+						<?php echo $item['date']; ?>
 					</td>
 				</tr>
 			</table>
 		</div>
-		<div class="col-sm-3">
-			<!-- Таблица, которую вы видете ниже, это элемент 1-го товара. Вам нужно такю сделать для каждого товара -->
-			<table class="table table-bordered">
-				<tr>
-					<td class="text-center" colspan="2">
-						<!-- IMAGE 200x200 -->
-						<img src="" class="img-thumbnail center">
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center" colspan="2">
-						<?php echo $services[1] ?>
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center">
-						<!-- GOODS PRICE -->$
-					</td>
-					<td class="text-center">
-						<!-- GOODS CREATED AT YYYY-MM-DD -->
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="col-sm-3">
-			<!-- Таблица, которую вы видете ниже, это элемент 1-го товара. Вам нужно такю сделать для каждого товара -->
-			<table class="table table-bordered">
-				<tr>
-					<td class="text-center" colspan="2">
-						<!-- IMAGE 200x200 -->
-						<img src="" class="img-thumbnail center">
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center" colspan="2">
-						<?php echo $services[2] ?>
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center">
-						<!-- GOODS PRICE -->$
-					</td>
-					<td class="text-center">
-						<!-- GOODS CREATED AT YYYY-MM-DD -->
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="col-sm-3">
-			<!-- Таблица, которую вы видете ниже, это элемент 1-го товара. Вам нужно такю сделать для каждого товара -->
-			<table class="table table-bordered">
-				<tr>
-					<td class="text-center" colspan="2">
-						<!-- IMAGE 200x200 -->
-						<img src="" class="img-thumbnail center">
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center" colspan="2">
-						<?php echo $services[3] ?>
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center">
-						<!-- GOODS PRICE -->$
-					</td>
-					<td class="text-center">
-						<!-- GOODS CREATED AT YYYY-MM-DD -->
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="col-sm-3">
-			<!-- Таблица, которую вы видете ниже, это элемент 1-го товара. Вам нужно такю сделать для каждого товара -->
-			<table class="table table-bordered">
-				<tr>
-					<td class="text-center" colspan="2">
-						<!-- IMAGE 200x200 -->
-						<img src="" class="img-thumbnail center">
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center" colspan="2">
-						<?php echo $services[4] ?>
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center">
-						<!-- GOODS PRICE -->$
-					</td>
-					<td class="text-center">
-						<!-- GOODS CREATED AT YYYY-MM-DD -->
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="col-sm-3">
-			<!-- Таблица, которую вы видете ниже, это элемент 1-го товара. Вам нужно такю сделать для каждого товара -->
-			<table class="table table-bordered">
-				<tr>
-					<td class="text-center" colspan="2">
-						<!-- IMAGE 200x200 -->
-						<img src="" class="img-thumbnail center">
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center" colspan="2">
-						<?php echo $services[5] ?>
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center">
-						<!-- GOODS PRICE -->$
-					</td>
-					<td class="text-center">
-						<!-- GOODS CREATED AT YYYY-MM-DD -->
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
+<?php endforeach; ?>
 
 
 	<!-- Bootstrap core JavaScript
