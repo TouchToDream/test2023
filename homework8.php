@@ -21,9 +21,15 @@ echo $result . '<br/>';
 
 //Задание 4 (Дан массив $arr. С помощью цикла foreach выведите на экран таблицу ключей и элементов.)
 $array3 = ['value1', 'value2', 'value3', 'value4', 'value5'];
+echo '<table>';
 foreach ($array3 as $key => $value) {
-    echo sprintf('key = %s, value = %s <br/>', $key, $value);
+    echo '<tr>';
+    echo '<td>key = ' . $key . '</td>';
+    echo '<td>value = ' . $value . '</td>';
+    echo '</tr>';
 }
+echo '</table>';
+
 
 //Задание 5 (Дан массив $arr с ключами 'Коля', 'Вася', 'Петя' и с элементами '200', '300', '400'. С помощью цикла foreach выведите на экран столбец строк такого формата: 'Коля - зарплата 200 долларов.'. )
 $array4 = ['Коля' => 200, 'Вася' => 300, 'Петя' => 400];
@@ -112,7 +118,7 @@ foreach ($array7 as $value) {
 $array8 = ['10', '20', '30', '50', '235', '3000'];
 foreach ($array8 as $value) {
     $firstNum = substr($value, 0, 1);
-    if ($firstNum == 1 || $firstNum == 2 || $firstNum == 5) {
+    if ($firstNum === '1' || $firstNum === '2' || $firstNum === '5') {
         echo $value . '<br/>';
     }
 }
@@ -138,7 +144,7 @@ foreach ($week as $key => $day) {
 //Задание 17 (С помощью цикла for заполните массив числами от 1 до 100. То есть у вас должен получится массив [1, 2, 3... 100].)
 $array10 = [];
 for ($i = 1; $i <= 100; $i++) {
-    array_push($array10, $i);
+    $array10[] = $i;
 }
 print_r($array10);
 echo '<br/>';
@@ -150,7 +156,8 @@ $en = [];
 $library = range('a', 'z');
 foreach ($array11 as $value) {
     $firstLetter = strtolower(substr($value, 0, 1));
-    in_array($firstLetter, $library) ? $en[] = $value : $ru[] = $value;
+    $isEnglishWord = in_array($firstLetter, $library);
+    $isEnglishWord ? array_push($en, $value) : array_push($ru, $value);
 }
 print_r($en);
 echo '<br/>';
